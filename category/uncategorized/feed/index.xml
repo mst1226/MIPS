@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>未分类 &#8211; MIPS</title>
+	<atom:link href="http://new2/category/uncategorized/feed/?simply_static_page=2071" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Multimodal Intelligent Perceiving System</description>
+	<lastBuildDate>Wed, 17 May 2023 07:05:33 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2023/05/微信图片_20230419161532-150x150.png</url>
+	<title>未分类 &#8211; MIPS</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>你好</title>
+		<link>/2023/05/17/%e4%bd%a0%e5%a5%bd/</link>
+		
+		<dc:creator><![CDATA[root1]]></dc:creator>
+		<pubDate>Wed, 17 May 2023 07:05:31 +0000</pubDate>
+				<category><![CDATA[未分类]]></category>
+		<guid isPermaLink="false">/?p=731</guid>
+
+					<description><![CDATA[]]></description>
+										<content:encoded><![CDATA[]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

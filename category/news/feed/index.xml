@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>news &#8211; MIPS</title>
+	<atom:link href="http://new2/category/news/feed/?simply_static_page=2068" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Multimodal Intelligent Perceiving System</description>
+	<lastBuildDate>Wed, 17 May 2023 07:09:55 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2023/05/微信图片_20230419161532-150x150.png</url>
+	<title>news &#8211; MIPS</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>利用BERT提高语种识别性能</title>
+		<link>/2023/05/16/%e5%88%a9%e7%94%a8bert%e6%8f%90%e9%ab%98%e8%af%ad%e7%a7%8d%e8%af%86%e5%88%ab%e6%80%a7%e8%83%bd/</link>
+		
+		<dc:creator><![CDATA[root1]]></dc:creator>
+		<pubDate>Tue, 16 May 2023 05:52:49 +0000</pubDate>
+				<category><![CDATA[news]]></category>
+		<guid isPermaLink="false">/?p=118</guid>
+
+					<description><![CDATA[本文介绍清华大学语音与音频技术实验室（SATLab）ISCSLP 2022录用论文。BERT-LID: Lev ... <a title="利用BERT提高语种识别性能" class="read-more" href="/2023/05/16/%e5%88%a9%e7%94%a8bert%e6%8f%90%e9%ab%98%e8%af%ad%e7%a7%8d%e8%af%86%e5%88%ab%e6%80%a7%e8%83%bd/" aria-label="继续阅读利用BERT提高语种识别性能">阅读更多</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/qm67vea2EBne.png" alt=""/></figure>
+
+
+
+<p>本文介绍清华大学语音与音频技术实验室（SATLab）ISCSLP 2022录用论文。BERT-LID: Leveraging BERT to Improve Spoken Language Identification。这篇文章将BERT模型引入到语种识别领域。利用BERT模型的优越性，再结合下游不同的神经网络模型，提升语种识别能力，尤其是在短语音的情况下识别性能有更为明显提升。</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p></p>
+</blockquote>
+
+
+
+<h1 class="wp-block-heading"><strong>01 语种识别</strong></h1>
+
+
+
+<p>语种识别是分析处理语音片段以判断其所属的语种。&nbsp;它&nbsp;对智能语音系统中的多语言模块有着深远的影响。目前语种&nbsp;识别技术在中长语音（&gt;3s）上能够实现较高的准确率&nbsp;，但是在短语音（&lt;=1s）上&nbsp;的表现并不能令人满意。由于短语音提供的数据信息较少，因此大大增加了识别难度。</p>
+
+
+
+<p>我们尝试将在自然语言处理中表现甚好的BERT模型应用到语种识别任务中，旨在提升短语音情况下语种识别模型的性能。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/7jEjAzEBNNfa.jpg" alt="640.jpg" title="640.jpg"/></figure>
+
+
+
+<p><em>语种识别（图片来自第五届东方语种识别竞赛）</em></p>
+
+
+
+<h1 class="wp-block-heading"><strong>02 BERT-LID</strong></h1>
+
+
+
+<p>BERT的全称是：Bidirectional Encoder Representation from Transformers。该模型通过大规模无标注文本语料训练，获得包含丰富语义信息的表征，BERT具有<strong>强大的语义理解能力</strong>，是近年来自然语言处理领域公认的里程碑模型。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/R3Q3If7BJzyy.png" alt="640.png" title="640.png"/></figure>
+
+
+
+<p><em>BERT模型（图片来自</em><a href="https://arxiv.org/pdf/1810.04805.pdf%EF%BC%89"><em>https://arxiv.org/pdf/1810.04805.pdf）</em></a></p>
+
+
+
+<p>原始的BERT旨在处理基于文本的表示，而我们这里的输入是语音，因此需要对输入语音进行预处理以适应该模型。</p>
+
+
+
+<p>方法一：提取语音的音素，作为BERT模型的输入。</p>
+
+
+
+<p>方法二：提取语音的后验概率特征，替换原始的Token Embedding结果，作为输入。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/nUJnYv2uUzIr.jpg" alt="640-_1_.jpg" title="640-_1_.jpg"/></figure>
+
+
+
+<p><em>将调整过后的BERT接不同的分类网络模型进行学习</em></p>
+
+
+
+<p>我们通过对整体网络进行训练以获得最佳BERT-LID模型。</p>
+
+
+
+<h1 class="wp-block-heading"><strong>03 实验及结论</strong></h1>
+
+
+
+<p>我们使用OLR20、TAL_ASR、TIMIT和THCHS30数据集来对BERT模型进行训练。对于音频数据我们使用BUT的开源代码来获得音素序列以及音素后验概率特征。</p>
+
+
+
+<p>其中OLR20来自于2020年东方语种识别竞赛所提供的数据，包含6个语种；TAL_ASR为好未来英语课授课音频，每条音频只有一位说话人，包含中英文混合讲话的情况（对于这种情况，我们使用强制对齐的方法来获得中文与英文的标签信息）；TIMIT为英文数据集；THCHS30为中文数据集。同时我们还对数据进行切分处理来获得时长为1s的短语音数据。数据集的具体情况如下图所示，其中T&amp;T为TIMIT和THCHS30的切分短语音混合使用的情况。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/VRZvEveA7Jfe.png" alt="640 (1).png" title="remote.png"/></figure>
+
+
+
+<p><em>数据集</em></p>
+
+
+
+<p>下游神经网络模块，我们选择使用CNN、LSTM、RCNN、DPCNN分别进行实验。首先我们在OLR20和T&amp;T数据上对BERT-LID模型进行测试，然后进行消融实验：a）BERT部分结合线性分类层来得到结果（称之为BERT）；b）去掉BERT模块（称之为LID），直接将数据输入到对应的模型中来得到结果。可以看出，相比于BERT以及LID模块，<strong>BERT-LID模型在语种识别任务中准确率整体上有所提升</strong>。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/fmeIBru2yaQf.png" alt="640 (2).png" title="remote.png"/></figure>
+
+
+
+<p><em>在OLR20和T&amp;T数据集上进行消融实验</em></p>
+
+
+
+<p>之后，我们在BERT-RCNN、x-vextor、n-gram-svm模型上进行对比实验（TAL_ASR和T&amp;T数据集为短音频数据的集合），其中x-vextor、n-gram-svm为我们的基线系统。可以看出，BERT-LID模型在我们的不同数据集中都能有最优表现，尤其是<strong>在短语音情况下，我们所提出的方法有更为明显的提升</strong>。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/VrYZ3aAVzQny.png" alt="640 (3).png" title="remote.png"/></figure>
+
+
+
+<p><em>在不同数据集上进行对比试验</em></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>探索语音自监督模型的高效融合算法</title>
+		<link>/2023/05/16/%e6%8e%a2%e7%b4%a2%e8%af%ad%e9%9f%b3%e8%87%aa%e7%9b%91%e7%9d%a3%e6%a8%a1%e5%9e%8b%e7%9a%84%e9%ab%98%e6%95%88%e8%9e%8d%e5%90%88%e7%ae%97%e6%b3%95/</link>
+		
+		<dc:creator><![CDATA[root1]]></dc:creator>
+		<pubDate>Tue, 16 May 2023 05:52:15 +0000</pubDate>
+				<category><![CDATA[news]]></category>
+		<guid isPermaLink="false">/?p=116</guid>
+
+					<description><![CDATA[本文介绍了清华大学语音与音频技术实验室（SATLab）与上海交通大学跨媒体语言智能实验室（X-LANCE）合作 ... <a title="探索语音自监督模型的高效融合算法" class="read-more" href="/2023/05/16/%e6%8e%a2%e7%b4%a2%e8%af%ad%e9%9f%b3%e8%87%aa%e7%9b%91%e7%9d%a3%e6%a8%a1%e5%9e%8b%e7%9a%84%e9%ab%98%e6%95%88%e8%9e%8d%e5%90%88%e7%ae%97%e6%b3%95/" aria-label="继续阅读探索语音自监督模型的高效融合算法">阅读更多</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image is-resized"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/qeuqUzFVzIZz.png" alt="" width="128" height="128"/></figure>
+
+
+
+<p>本文介绍了清华大学语音与音频技术实验室（SATLab）与上海交通大学跨媒体语言智能实验室（X-LANCE）合作的NCMMSC录用论文：Exploring Effective Fusion Algorithms for Speech Based Self-Supervised Learning Models。该论文提出了一系列语音自监督模型融合算法，并基于语音自监督模型的评测框架SUPERB展开一系列实验。实验结果表明，该论文中提出的融合算法，有效地结合了目前表现出色的语音自监督模型 HuBERT 与 Data2vec 的优势，提高了模型在说话人识别与语音识别任务上的表现。</p>
+
+
+
+<h1 class="wp-block-heading"><strong>一&nbsp;语音自监督模型各有偏好</strong><strong></strong></h1>
+
+
+
+<p>近年来，自监督学习在语音领域取得巨大成功。语音自监督学习的一般思想，是基于语音的上下文信息进行重构或预测自身，使模型能够在无监督的情况下有效地学习底层结构信息。语音自监督模型可以在大量的无标记语音数据上进行预训练，然后在特定的下游任务上用少量的标注语音进行微调，以实现显著的性能提高。目前已涌现出一系列成功的语音自监督模型，如Wav2vec 2.0，HuBERT，WavLM，Data2vec等。</p>
+
+
+
+<p>现有的研究表明，不同的语音自监督模型，对下游任务的偏好不同。在我们的工作中，我们基于SUPERB——一个语音自监督模型评测框架，首次评测了&nbsp;Data2vec&nbsp;在不同任务上的表现，并与现有的自监督模型进行对比。我们发现，一些模型在说话人相关的任务上表现出色，例如&nbsp;HuBERT；一些模型在内容相关的任务上出类拔萃，例如&nbsp;Data2vec。同时我们也发现，对于偏好不同的模型，其内部的transformer层编码了截然不同的信息，如图1所示。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/BFbY7rIRfYba.png" alt="640 (4).png" title="640 (4).png"/></figure>
+
+
+
+<p>图1.&nbsp;SUPERB评测系统中，HuBERT&nbsp;与&nbsp;Data2vec&nbsp;在不同下游任务上的权重对比</p>
+
+
+
+<p>我们思考，能否做到一种融合算法，将不同自监督模型的信息有效地提取并融合，使融合模型能够综合各模型的优点，在不同的下游任务上做到“十项全能”呢？基于此，我们提出了一系列融合算法，希望能够融合不同模型的优势。</p>
+
+
+
+<h1 class="wp-block-heading">二 语音自监督模型融合算法</h1>
+
+
+
+<p>我们提出并比较了四种针对多种自监督模型的融合方法（如图2所示）：两种特征级融合和两种概率级融合。这四种方法的模型融合阶段，按照信息交互时间依次向后伸。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/meMvIv3M3Ibm.png" alt="640 (5).png" title="remote.png"/></figure>
+
+
+
+<p>图2.&nbsp;语音自监督模型的四种融合方式</p>
+
+
+
+<p>设函数F表示下游模型，m为要融合的模型个数，l为每个模型的层数，wij，hij分别表示第&nbsp;i&nbsp;个模型的第&nbsp;j&nbsp;层特征的权值和隐层向量。</p>
+
+
+
+<p>第一种融合算法，是简单地直接融合各模型特征。如图（2）a&nbsp;图所示，我们直接将各模型各层特征进行线性加权，得到的融合特征送入下游模型中。这里，不同模型在前向传播后直接进行信息交流，最终针对特定任务的概率分布为</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/Y36f2i6ZFN7f.png" alt="640 (6).png" title="640 (6).png"/></figure>
+
+
+
+<p>第二种融合算法，是对各模型进行结构化的融合。如图（2）b&nbsp;图所示，首先，我们对每个自监督模型的不同层的特征进行加权求和；然后，我们应用第一步中这些输出再进行结构化的加权，以得到下游模型的输入。这里，不同模型提取的信息经历了各自的特征融合器之后才进行交流融合，最终得到针对特定任务的概率分布为</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/MJ7vimee6jIr.png" alt="640 (7).png" title="640 (7).png"/></figure>
+
+
+
+<p>第三种融合算法，是在概率层面进行融合。如图（2）c&nbsp;图所示，对于每个自监督模型，我们对不同层的特征进行加权，并将结果输入下游模型。下游模型的输出形成了一个任务标签的概率分布。我们在这里融合不同模型得到的概率分布，并使用融合的概率分布进行推理。不同模型提取的信息经过相同的下游模型后相互融合，最终得到的概率分布可表示为</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/RZ3YrmNBRfye.png" alt="640 (8).png" title="640 (8).png"/></figure>
+
+
+
+<p>第四种融合算法，与第三种类似，但不同自监督模型各自享有独立的下游模型，如图（2）d&nbsp;图所示。不同下游模型产生的概率分布将被融合，融合的分布将用于最终的推断，最终的概率分布可表示为</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/IRrUJzQFFVbq.png" alt="640 (9).png" title="640 (9).png"/></figure>
+
+
+
+<h1 class="wp-block-heading">三 模型融合实验与分析</h1>
+
+
+
+<p>为了更好地对比模型融合的效果，我们基于SUPERB，令自监督模型在微调过程中被冻结，只有较小的下游模型与模型的特征融合器（Featurizer）可以被更新。我们选择&nbsp;Data2vec&nbsp;和&nbsp;HuBERT&nbsp;作为待融合的模型，因为他们对下游任务不同的偏好，正是我们想要的。我们主要分析两大任务：说话人识别与语音识别，它们分别是说话人相关任务与内容相关任务的典型代表。</p>
+
+
+
+<p>如图3所示，实验结果表明，对于说话人相关任务，仅仅是简单的特征融合，会大幅降低识别的准确率。这一大幅衰减，可以通过结构化的模型融合来避免。这一结论同样对语音识别任务有效。这可能是因为，如果直接融合往往会混淆信息，因为不同模型的内在特征有很大的不同，进行结构化加权后能够更好地利用模型的能力，而不会引起模型间的信息混淆。</p>
+
+
+
+<p>同时，我们发现，对于说话人识别任务，信息交换的阶段越接近任务的标签，融合效果就越加有效。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/fARziyMbErum.png" alt="640 (10).png" title="640 (10).png"/></figure>
+
+
+
+<p>图3. 四种融合方式在 SID 任务与 ASR&nbsp;任务的表现</p>
+
+
+
+<p>在大模型上，结构化融合同样适用。我们尝试了语音识别任务上大模型的结构化融合，词错率降低了7%，目前仍然是SUPERB上的最佳结果。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/bi6RVvmmQNvi.png" alt="640 (11).png" title="640 (11).png"/></figure>
+
+
+
+<p>图4.&nbsp;结构化融合有利于大模型语音识别</p>
+
+
+
+<p>我们提出了一系列模型融合方法，旨在综合不同语音自监督模型的优势。实验结果表明，我们提出的方法有效地综合了不同语音自监督模型在不同任务上的能力，相对于单个模型而言，融合模型的能力取得了显著的提升。</p>
+
+
+
+<p><strong>第一作者简介</strong></p>
+
+
+
+<figure class="wp-block-image is-resized"><img fetchpriority="high" decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/qmUreyInaeia.jpg" alt="640-_2_.jpg" width="200" height="302" title="640-_2_.jpg"/></figure>
+
+
+
+<p>唐昌礼，清华大学电子工程系2020级本科生，曾于清华大学语音与音频技术实验室、上海交通大学跨媒体语言智能实验室参与 SRT 项目。</p>
+
+
+
+<figure class="wp-block-image is-resized"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/22AzEbMjaaYf.jpg" alt="640-_3_.jpg" width="270" height="407" title="640-_3_.jpg"/></figure>
+
+
+
+<p>王与进，清华大学电子工程系2020级本科生，曾于清华大学语音与音频技术实验室、上海交通大学跨媒体语言智能实验室参与&nbsp;SRT 项目。</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>基于声学模型共享的零资源韩语识别系统</title>
+		<link>/2023/05/16/%e5%9f%ba%e4%ba%8e%e5%a3%b0%e5%ad%a6%e6%a8%a1%e5%9e%8b%e5%85%b1%e4%ba%ab%e7%9a%84%e9%9b%b6%e8%b5%84%e6%ba%90%e9%9f%a9%e8%af%ad%e8%af%86%e5%88%ab%e7%b3%bb%e7%bb%9f/</link>
+		
+		<dc:creator><![CDATA[root1]]></dc:creator>
+		<pubDate>Tue, 16 May 2023 05:49:31 +0000</pubDate>
+				<category><![CDATA[news]]></category>
+		<guid isPermaLink="false">/?p=114</guid>
+
+					<description><![CDATA[声学模型共享方法是极低资源小语种语音识别一种解决方案，能够实现不需要任何语音数据的语音识别。本文介绍清华大学语 ... <a title="基于声学模型共享的零资源韩语识别系统" class="read-more" href="/2023/05/16/%e5%9f%ba%e4%ba%8e%e5%a3%b0%e5%ad%a6%e6%a8%a1%e5%9e%8b%e5%85%b1%e4%ba%ab%e7%9a%84%e9%9b%b6%e8%b5%84%e6%ba%90%e9%9f%a9%e8%af%ad%e8%af%86%e5%88%ab%e7%b3%bb%e7%bb%9f/" aria-label="继续阅读基于声学模型共享的零资源韩语识别系统">阅读更多</a>]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" src="/wp-content/uploads/2023/05/V7zyIvZ7NBR3.jpg" alt="" class="wp-image-16" width="256" height="128" srcset="/wp-content/uploads/2023/05/V7zyIvZ7NBR3.jpg 512w, /wp-content/uploads/2023/05/V7zyIvZ7NBR3-300x150.jpg 300w" sizes="(max-width: 256px) 100vw, 256px" /></figure>
+
+
+
+<p>声学模型共享方法是极低资源小语种语音识别一种解决方案，能够实现不需要任何语音数据的语音识别。本文介绍清华大学语音与音频技术实验室的零资源韩语语音系统，其在不使用任何韩语语音数据的情况下，在Zeroth韩语数据集上的测试CER达到了27.33%。</p>
+
+
+
+<h1 class="wp-block-heading">一&nbsp;<strong>声学模型共享与零资源ASR</strong></h1>
+
+
+
+<p>小语种语音识别一直是语音领域值得关注的问题之一，几千种小语种普遍面临着训练数据不足、收集训练数据困难等问题，而声学模型共享方法则可以实现<strong>不需训练数据的语音识别</strong>，从而为这一问题提供了一个方向。这一方法利用语种之间的相似性，直接使用常见语言的声学模型，结合低资源语言的语言模型、发音字典以及两种语言之间的音素映射关系等专家知识，就可以构建较为精准的语音识别系统。</p>
+
+
+
+<p>我们将声学模型共享方法扩展到了零资源韩语语音识别上。我们使用Kaldi工具包，利用汉语训练声学模型，根据汉语和韩语两种语言之间的音素相似性设置了两种不同的音素映射方案，并比较了不同方案的优劣。实验结果表明，我们的系统可以在<strong>不使用任何韩语训练数据的情况下达到27.33%的CER</strong>。</p>
+
+
+
+<h1 class="wp-block-heading">二&nbsp;<strong>韩语的声学模型共享</strong></h1>
+
+
+
+<p>在书写上，韩语是一种表音文字，其书写体系中的符号与音素存在着紧密的对应关系。在发音上，韩语是一种音节语言，一个韩语音节由一个元音（中声），元音前的一个可选的辅音（初声）和元音后的一个可选的辅音（终声）构成。韩语包含19个辅音和21个元音。在韩语中，根据上下文的不同，音素可能被替换、删除或是添加，两个相邻的音素可能会发生合并，因此即使韩语是完全的表音文字，一个句子的字面内容和其发音仍可能存在不同。</p>
+
+
+
+<p>为了实现声学模型共享，我们需要建立韩语和汉语之间的音素对应关系。一种方法是将汉语词用韩语音素表示(zh2kr)。这种方法在训练过程中就引入音素对应关系，训练集中的汉语被转写为相近的韩语音素，而得到的模型可以被视为一个用<strong>汉语语音学习得到的韩语语音识别模型</strong>。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/ZNRNjyiQfMJ3.png" alt="640 (12).png" title="640 (12).png"/></figure>
+
+
+
+<p>汉语音素到韩语音素的对应关系（部分）</p>
+
+
+
+<p>另一种方法是将韩语词用汉语音素表示(kr2zh)。这种方法是在声学模型训练完成后引入音素对应关系。<strong>通过修改发音词典，将韩语词统一表示为相近的汉语音素</strong>，使用汉语正常训练的声学模型就可以用来识别韩语。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/32A7Jbe2uyEj.png" alt="640 (13).png" title="640 (13).png"/></figure>
+
+
+
+<p>韩语音素到汉语音素的对应关系（部分）</p>
+
+
+
+<h1 class="wp-block-heading">三&nbsp;<strong>实验设置与结果</strong></h1>
+
+
+
+<p>我们使用Aishell1数据集训练汉语声学模型，测试集则选用Zeroth开源韩语数据集的测试集。声学模型结构方面，我们使用了<strong>11层TDNN</strong>，输入为<strong>40维MFCC</strong>特征；语言模型方面，我们使用Zeroth训练集文本训练了3-gram语言模型。我们的基线系统是使用Zeroth的90小时韩语数据训练得到的相同结构的TDNN模型。</p>
+
+
+
+<p>实验结果表明，尽管与使用充足有标注数据训练的ASR模型仍有较大差距，<strong>我们的零资源语音识别模型仍能实现较低的错误率</strong>。另外，相比kr2zh方法，zh2kr方法的精度有大幅度的下降。</p>
+
+
+
+<p>我们认为，这是由于zh2kr方法需要为汉语中存在而韩语中不存在的音素指定近似的对应关系，这使得模型学习到的韩语音素对应的汉语声学特征与测试集中真正的韩语声学特征的分布有较大差异，这些<strong>人工引入的额外的领域漂移</strong>影响了最终的识别效果。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/FZNn2iuIfmea.png" alt="640 (14).png" title="640 (14).png"/></figure>
+
+
+
+<p>不同映射方法与有监督方法的比较。零资源方法能达到较低的CER，而kr2zh方法要优于zh2kr方法</p>
+
+
+
+<p>我们的方法将无监督预训练模型应用于零资源语音识别任务，在不使用目标语种的任何语音数据的情况下实现了平均33%的WER。在无训练数据或可获得的训练数据小于10小时的情况下，我们的零资源方法相比有监督方法有较大优势。</p>
+
+
+
+<p><strong>作者简介</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0B/jE7rYz6bqIJz.jpg" alt="640-_4_.jpg" title="640-_4_.jpg"/></figure>
+
+
+
+<p>王皓宇，清华大学电子工程系语音与音频技术实验室研究生二年级学生，主要研究方向为低资源语音识别和预训练模型蒸馏。</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

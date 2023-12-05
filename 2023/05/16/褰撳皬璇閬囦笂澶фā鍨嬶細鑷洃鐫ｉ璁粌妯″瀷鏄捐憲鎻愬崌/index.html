@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>当小语种遇上大模型：自监督预训练模型显著提升低资源小语种语音识别性能 &#8211; MIPS</title>
+<meta name="robots" content="max-image-preview:large">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="MIPS &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="MIPS &raquo; 评论Feed" href="/comments/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<style id="wp-emoji-styles-inline-css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.1" media="all">
+<style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--color--ffaa-35: var(--ffaa35);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="generate-style-css" href="/wp-content/themes/generatepress/assets/css/main.min.css?ver=3.3.0" media="all">
+<style id="generate-style-inline-css">a{text-decoration:underline;}.entry-title a, .site-branding a, a.button, .wp-block-button__link, .main-navigation a{text-decoration:none;}.grid-container{max-width:1500px;}.wp-block-group__inner-container{max-width:1500px;margin-left:auto;margin-right:auto;}.site-header .header-image{width:90px;}.generate-back-to-top{font-size:20px;border-radius:3px;position:fixed;bottom:30px;right:30px;line-height:40px;width:40px;text-align:center;z-index:10;transition:opacity 300ms ease-in-out;opacity:0.1;transform:translateY(1000px);}.generate-back-to-top__show{opacity:1;transform:translateY(0);}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be;--ffaa35:#FFAA35;}:root .has-contrast-color{color:var(--contrast);}:root .has-contrast-background-color{background-color:var(--contrast);}:root .has-contrast-2-color{color:var(--contrast-2);}:root .has-contrast-2-background-color{background-color:var(--contrast-2);}:root .has-contrast-3-color{color:var(--contrast-3);}:root .has-contrast-3-background-color{background-color:var(--contrast-3);}:root .has-base-color{color:var(--base);}:root .has-base-background-color{background-color:var(--base);}:root .has-base-2-color{color:var(--base-2);}:root .has-base-2-background-color{background-color:var(--base-2);}:root .has-base-3-color{color:var(--base-3);}:root .has-base-3-background-color{background-color:var(--base-3);}:root .has-accent-color{color:var(--accent);}:root .has-accent-background-color{background-color:var(--accent);}:root .has-ffaa35-color{color:var(--ffaa35);}:root .has-ffaa35-background-color{background-color:var(--ffaa35);}.top-bar{background-color:#999999;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--base-3);color:#000000;}.main-title a,.main-title a:hover{color:var(--contrast);}.site-description{color:#000000;}.main-navigation,.main-navigation ul ul{background-color:#FFAA35;}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:var(--contrast);}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:var(--base-3);}button.menu-toggle:hover,button.menu-toggle:focus{color:var(--contrast);}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--base-3);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:var(--base-3);}.main-navigation ul ul{background-color:var(--base);}.main-navigation .main-nav ul ul li a{color:var(--contrast);}.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover > a,.main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"]) > a{color:rgba(255,171,54,0.89);background-color:var(--base-3);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--base-3);}.site-info{background-color:var(--ffaa35);}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}:root{--gp-search-modal-bg-color:var(--base-3);--gp-search-modal-text-color:var(--contrast);--gp-search-modal-overlay-bg-color:rgba(0,0,0,0.2);}@media (max-width:768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:var(--contrast);}}.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container{padding:0px 20px 0px 20px;}.site-main .wp-block-group__inner-container{padding:40px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:30px;padding-left:30px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}.one-container .site-main .paging-navigation{margin-bottom:20px;}}/* End cached CSS */.is-right-sidebar{width:30%;}.is-left-sidebar{width:30%;}.site-content .content-area{width:100%;}@media (max-width:768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}}
+.elementor-template-full-width .site-content{display:block;}</style>
+<link rel="stylesheet" id="elementor-icons-css" href="/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.20.0" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.13.2" media="all">
+<link rel="stylesheet" id="swiper-css" href="/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5" media="all">
+<link rel="stylesheet" id="elementor-post-25-css" href="/wp-content/uploads/elementor/css/post-25.css?ver=1684214792" media="all">
+<link rel="stylesheet" id="elementor-global-css" href="/wp-content/uploads/elementor/css/global.css?ver=1684214855" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=6.4.1" media="all">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script src="/wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/jq-sticky-anything.min.js?ver=2.1.1" id="stickyAnythingLib-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/593">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.1">
+<link rel="canonical" href="/2023/05/16/%e5%bd%93%e5%b0%8f%e8%af%ad%e7%a7%8d%e9%81%87%e4%b8%8a%e5%a4%a7%e6%a8%a1%e5%9e%8b%ef%bc%9a%e8%87%aa%e7%9b%91%e7%9d%a3%e9%a2%84%e8%ae%ad%e7%bb%83%e6%a8%a1%e5%9e%8b%e6%98%be%e8%91%97%e6%8f%90%e5%8d%87/">
+<link rel="shortlink" href="/?p=593">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=%2F2023%2F05%2F16%2F%25e5%25bd%2593%25e5%25b0%258f%25e8%25af%25ad%25e7%25a7%258d%25e9%2581%2587%25e4%25b8%258a%25e5%25a4%25a7%25e6%25a8%25a1%25e5%259e%258b%25ef%25bc%259a%25e8%2587%25aa%25e7%259b%2591%25e7%259d%25a3%25e9%25a2%2584%25e8%25ae%25ad%25e7%25bb%2583%25e6%25a8%25a1%25e5%259e%258b%25e6%2598%25be%25e8%2591%2597%25e6%258f%2590%25e5%258d%2587%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=%2F2023%2F05%2F16%2F%25e5%25bd%2593%25e5%25b0%258f%25e8%25af%25ad%25e7%25a7%258d%25e9%2581%2587%25e4%25b8%258a%25e5%25a4%25a7%25e6%25a8%25a1%25e5%259e%258b%25ef%25bc%259a%25e8%2587%25aa%25e7%259b%2591%25e7%259d%25a3%25e9%25a2%2584%25e8%25ae%25ad%25e7%25bb%2583%25e6%25a8%25a1%25e5%259e%258b%25e6%2598%25be%25e8%2591%2597%25e6%258f%2590%25e5%258d%2587%2F#038;format=xml">
+<style>/* CSS added by Hide Metadata Plugin */
+
+.entry-meta .byline,
+			.entry-meta .by-author,
+			.entry-header .entry-meta > span.byline,
+			.entry-meta .author.vcard {
+				display: none;
+			}</style>
+<meta name="generator" content="Elementor 3.13.2; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+<link rel="icon" href="/wp-content/uploads/2023/05/微信图片_20230419161532-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2023/05/微信图片_20230419161532.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2023/05/微信图片_20230419161532.png">
+<meta name="msapplication-TileImage" content="http://new2:8083/wp-content/uploads/2023/05/微信图片_20230419161532.png">
+</head>
+
+<body class="post-template post-template-elementor_header_footer single single-post postid-593 single-format-standard wp-custom-logo wp-embed-responsive no-sidebar nav-below-header one-container header-aligned-left dropdown-hover featured-image-active elementor-default elementor-template-full-width elementor-kit-25 elementor-page elementor-page-593" itemtype="https://schema.org/Blog" itemscope>
+	<a class="screen-reader-text skip-link" href="#content" title="跳至内容">跳至内容</a>		<header class="site-header" id="masthead" aria-label="站点" itemtype="https://schema.org/WPHeader" itemscope>
+			<div class="inside-header grid-container">
+				<div class="site-branding-container">
+<div class="site-logo">
+					<a href="/" rel="home">
+						<img class="header-image is-logo-image" alt="MIPS" src="/wp-content/uploads/2023/05/18a1373af9362cbfc39010084a0b371-scaled.jpg" width="2560" height="1487">
+					</a>
+				</div>
+<div class="site-branding">
+						<p class="main-title" itemprop="headline">
+					<a href="/" rel="home">
+						MIPS
+					</a>
+				</p>
+						<p class="site-description" itemprop="description">
+					Multimodal Intelligent Perceiving System
+				</p>
+					</div>
+</div>			<div class="header-widget">
+				<aside id="block-9" class="widget inner-padding widget_block">
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex"></div>
+</aside><aside id="block-8" class="widget inner-padding widget_block">
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-layout-2 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button" href="/%e4%b8%bb%e9%a1%b5/">Chinese</a></div>
+</div>
+</aside>			</div>
+						</div>
+		</header>
+				<nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation" aria-label="主要" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+			<div class="inside-navigation grid-container">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewbox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="mobile-menu">菜单</span>				</button>
+				<div id="primary-menu" class="main-nav"><ul id="menu-menu-1" class=" menu sf-menu">
+<li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-91"><a href="/">Home</a></li>
+<li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-94">
+<a href="/research/">Research<span role="presentation" class="dropdown-menu-toggle"><span class="gp-icon icon-arrow"><svg viewbox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515z"></path></svg></span></span></a>
+<ul class="sub-menu">
+	<li id="menu-item-601" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-601"><a href="/research/project/">Project</a></li>
+</ul>
+</li>
+<li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a href="/team/">Team</a></li>
+<li id="menu-item-92" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a href="/news/">News</a></li>
+<li id="menu-item-96" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="/achievement/">Achievement</a></li>
+<li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93"><a href="/recruit/">Recruit</a></li>
+</ul></div>
+<div class="menu-bar-items"></div>			</div>
+		</nav>
+		
+	<div class="site grid-container container hfeed" id="page">
+				<div class="site-content" id="content">
+			
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/yMZb2azAvUJz.jpg" alt=""></figure>
+
+
+
+<p><em>在大规模数据和算力的支撑下，语音领域自监督预学习取得了突破性进展，预训练模型则凭借其优异的性能而备受关注</em><em>。本文将一系列大规模预训练模型进行了深入对比，针对低资源小语种自动语音识别这一下游任务展开探索，并从模型、方法、语种等多个角度全面分析并总结了性能差异和内部机理。日前，该工作已被IEEE信号处理协会顶级期刊《IEEE Journal of Selected Topics in Signal Processing》接收。</em></p>
+
+
+
+<p>近期语音自监督学习凭借其在多个下游任务中的出色性能而备受关注，这为低资源语种语音识别带来了新的发展空间。本文中，我们对比分析了<strong>多个</strong><strong>wav2vec</strong><strong>系列预训练模型在</strong><strong>15</strong><strong>个不同的低资源小语种上的表现。研究内容主要针对模型预训练阶段的两个重要因素（模型框架和训练数据）、三种微调方法以及预训练模型表征应用展开</strong><strong>。</strong>首先，我们研究了使用不同语音数据或自监督架构（wav2vec2.0、HuBERT和WavLM）的预训练模型在低资源语种中的语音识别性能。其次，我们探索了语音数据利用、多语言学习和音素识别任务在微调阶段的应用。此外，我们还借助相似性分析探讨了模型微调对不同Transformer层预训练表征的影响，涉及不同的预训练体系结构和15个语种。同时我们将预训练表征应用于端到端和传统混合系统，以验证前文的表征分析，并取得了更优的性能。</p>
+
+
+
+<p>本文使用的低资源语种数据基本情况如下表所示。共&nbsp;15&nbsp;个语种，涵盖&nbsp;11&nbsp;个不同的语系。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/09/NFZbeijM7nEb.png" alt="640.png" title="640.png"></figure>
+
+
+
+<p>本文使用的15个语种的基本情况</p>
+
+
+
+<p><strong>一、预训练阶段影响因素对比</strong></p>
+
+
+
+<p>基于预训练模型的语音识别系统性能与预训练音频数据密不可分，不同的预训练架构也会带来性能差异。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/uqUfyq36Rbqy.png" alt="2.png" title="remote.png"></figure>
+
+
+
+<p>预训练阶段影响因素（预训练数据、预训练架构）</p>
+
+
+
+<p>我们比较了一些现有的开源预训练模型，以&nbsp;<strong>探索不同预训练数据集和预训练架构对低资源小语种语音识别性能的影响</strong>&nbsp;，主要模型的基本情况如下表所示。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/FBzEV3fYf6z2.png" alt="3.png" title="remote.png"></figure>
+
+
+
+<p><strong>1.1&nbsp;</strong><strong>预训练数据</strong><strong></strong></p>
+
+
+
+<p>为保证实验的公平性，在对比不同数据集训练得到的预训练模型时，我们选择了四个wav2vec2.0模型，包括一个英语单语种模型和三个多语种模型。</p>
+
+
+
+<p>对于&nbsp;OpenASR21&nbsp;数据集中的&nbsp;15&nbsp;种语言，我们从每个语系中选择一个语种作为代表，分别使用&nbsp;10h标注&nbsp;数据微调&nbsp;wav2vec2.0&nbsp;预训练模型。标注文本建模单元为字母或字素，并额外加入词分隔符。实验结果如下表所示。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/QNbYf2qqe2am.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p>通过表中结果可以发现，&nbsp;XLSR-128&nbsp;预训练模型在各个语种中均取得最低词错误率。在三个&nbsp;LARGE&nbsp;模型中，用英语音频训练得到的&nbsp;w2v-EN-60k&nbsp;模型明显处于劣势。在&nbsp;BASE&nbsp;模型和&nbsp;LARGE&nbsp;型模型之间的比较中，多语言&nbsp;BASE&nbsp;模型&nbsp;CLSRIL-23&nbsp;相比于英语&nbsp;LARGE&nbsp;模型&nbsp;w2v-EN-60k&nbsp;虽然使用的总训练音频量更少，但在&nbsp;10&nbsp;个语种中的&nbsp;9&nbsp;个语种上优于后者，以上结果说明了<strong>在小语种语音识别任务上，语音数据分布情况（多语种）相比于总数据量更为重要；使用更多语种更大数据量训练得到的模型性能相对更优。</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/i6vMJjamUJNj.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/Zn6zqaNziEbm.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p>不同预训练模型在微调前后各层输出表征的相似度</p>
+
+
+
+<p>为了探究微调前后模型各层参数的变化情况，我们采用CKA方法对预训练模型不同位置Transformer的输出表征进行了相似度分析，如上图所示，坐标轴数字为Transformer层的索引。可以发现<strong>各个预训练模型最后几层的输出表征在微调前后都发生了较明显变化，这表明在靠近输出端的层中可能蕴含更多的语义或文本相关的高层信息，与下游任务、语种特性紧密相关。相反地，在微调后，靠近输入端的前几层表征保留了更多的原预训练模型信息，同时前几层输出表征之间的相似性较高，这也表明这些层中可能存在一定的冗余部分。</strong>由于我们更关注对应层的表征在微调后的变化情况，因此将热度图中的左下角到右上角这一对角线的情况借助折线图展现出来。可以发现不同语种之间的表征变化情况差异较小，而BASE模型和LARGE模型的变化趋势存在较明显差异。</p>
+
+
+
+<p>进一步，我们将各个语种得到的相似度取平均值后展示在下图中，以更加直观地对比不同模型之间的差异。对比三个&nbsp;LARGE&nbsp;模型（&nbsp;w2v-EN-60k&nbsp;、&nbsp;XLSR-53&nbsp;、&nbsp;XLSR-128&nbsp;），<strong>我们发现模型在最后几层的相似度大小与模型的语音识别性能之间可能存在一定联系，即折线越靠上，说明对应表征的相似性越高、微调前后参数变化小，则对应的识别结果越好。</strong><strong></strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/6z6Fbqf2eEJ3.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p><strong>1.2&nbsp;</strong><strong>预训练架构：</strong><strong>wav2vec2.0, HuBERT</strong><strong>和</strong><strong>WavLM</strong><strong></strong></p>
+
+
+
+<p>为了保证公平性，我们选择了三个使用相近预训练语料库和模型参数的开源预训练模型w2v-EN-60k、HuBERT-EN-60k和WavLM-EN-94k作为研究对象。其中w2v-EN-60k和HuBERT-EN-60k通过Libri-light数据集的6万小时英语数据训练得到。WavLM-EN-94k则额外使用了1万小时Gigaspeech和2.4万小时VoxPopulil数据集进行模型预训练。</p>
+
+
+
+<p>实验包括两组系统设置，分别为&nbsp;FT&nbsp;和&nbsp;FE&nbsp;，其中&nbsp;FT&nbsp;指的是直接通过&nbsp;CTC&nbsp;准则进行模型微调，&nbsp;FE&nbsp;则表示将预训练模型作为前端特征提取模块用于&nbsp;CTC/Attention&nbsp;混合端到端系统。对应&nbsp;15&nbsp;个语种的语音识别结果如下表所示。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/7fAb2mvYfqQv.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p>通过上表中结果我们可以发现&nbsp;WavLM-EN-94k&nbsp;模型在&nbsp;FT&nbsp;和&nbsp;FE&nbsp;系统中的&nbsp;15&nbsp;个语种的词错误率均取得了最低值。在微调&nbsp;FT&nbsp;系统中，&nbsp;<strong>WavLM-EN-94k</strong>&nbsp;<strong>预训练模型与</strong>&nbsp;<strong>w2v-EN-60k</strong>&nbsp;<strong>和</strong>&nbsp;<strong>HuBERT-EN-60k</strong>&nbsp;<strong>相比，平均词错误率分别降低了</strong>&nbsp;<strong>18.7%</strong>&nbsp;<strong>和</strong>&nbsp;<strong>12.3%</strong>&nbsp;<strong>，这也说明了在低资源小语种语音识别任务上</strong>&nbsp;<strong>WavLM</strong>&nbsp;<strong>相比于</strong>&nbsp;<strong>wav2vec2.0</strong>&nbsp;<strong>和</strong>&nbsp;<strong>HuBERT</strong>&nbsp;<strong>模型具有明显优越性</strong>&nbsp;<strong>。</strong>&nbsp;同样地，我们把以上微调之后的三个预训练模型两两之间的各层表征之间的相似度情况展示如下。<strong>可以发现模型之间的主要差别集中最后三层，</strong>&nbsp;<strong>HuBERT</strong>&nbsp;<strong>和</strong>&nbsp;<strong>WavLM</strong>&nbsp;<strong>两者之间相似度更高，随着模型层数增加，不同语种之间的差异也逐渐拉大。</strong><strong></strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/ZRzyUfVvaUfa.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p>同时我们发现wav2vec2.0和HuBERT模型在不同系统和不同语种上的表现存在一定区别。直接微调时，使用HuBERT模型在gn、jv、ku、so、sw和tl这6种语言上的词错误率更低，其余语种词错误率则高于wav2vec2.0模型，且有较大差距；而在FE系统中，HuBERT模型在所有15个语种中均表现更优。因此<strong>我们推测</strong><strong>wav2vec2.0</strong><strong>和</strong><strong>HuBERT</strong><strong>模型对语种或某些语言特征存在偏好。我们通过调查各个语种的基本信息发现，</strong><strong>6</strong><strong>个在</strong><strong>HuBERT</strong><strong>模型表现更优的语种均使用拉丁书写体系，而其余</strong><strong>10</strong><strong>种语言除越南语外没有拉丁书写系统。从音素集角度来看，前面提到的</strong><strong>6</strong><strong>个语种平均音素数量较少，约占其余</strong><strong>10</strong><strong>个语种的</strong><strong>80%</strong><strong>。</strong><strong></strong></p>
+
+
+
+<p>为了全面对比三个预训练模型微调前后的变化情况，并涵盖不同语种的差异情况，我们进行了&nbsp;CKA&nbsp;相似性分析将结果展示在下图中，其中相同颜色的多条曲线对应使用同一预训练模型的不同语种。可以看到&nbsp;wav2vec2.0&nbsp;模型相比于其他模型对于微调的变化更加明显。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/jmm2U3vyYfeq.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p><strong>二、微调策略</strong></p>
+
+
+
+<p>模型微调是将预训练模型用于目标下游任务的一种快捷有效方法。针对低资源小语种，为了进一步提高语音识别任务性能，我们<strong>探索了多种微调策略：无标注音频数据利用、多语种微调和音素识别任务辅助。</strong>下图中分别展示了常规微调和三种策略的流程示意。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/fA3myeqiIr6r.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p>由于预训练模型是多语种的，因而在一定程度上具有多语言的通用性，但对于特定目标语种的针对性有所不足。<strong>我们提出</strong>&nbsp;<strong>FT2</strong>&nbsp;<strong>策略以借助目标语种的语音数据将预训练模型迁移到目标语种中，使用的音频数据来自</strong>&nbsp;<strong>BABEL</strong>&nbsp;<strong>数据集。在第一阶段，我们先通过对比损失和码本多样性损失以自监督的方式微调整个模型。第二阶段，我们使用该语种的标注</strong>&nbsp;<strong>10h</strong>&nbsp;<strong>数据对第一阶段得到的模型进行</strong>&nbsp;<strong>CTC</strong>&nbsp;<strong>准则微调。两阶段微调方法有助于预训练模型有效地适应单一目标语种。</strong>&nbsp;下表中展示了传统混合系统和微调系统&nbsp;FT&nbsp;、两阶段微调系统&nbsp;FT2&nbsp;的语音识别结果，可以看到&nbsp;FT2&nbsp;系统借助额外无标注语音数据取得了明显性能提升。从平均值来看，我们提出的策略相比于传统最优混合单系统在词错误率上可以相对降低&nbsp;8.5%&nbsp;。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/iy2MJfqeQ3Mj.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p>在另外两个策略上，<strong>我们通过实验验证了单语种微调相比于多语种微调的性能优越性，前者凭借更高的语种针对性在目标语种的语音识别任务上能够取得更优的性能，而后者则帮助模型学习更加通用鲁棒的表征。</strong>我们也借助实验说明了音素识别任务对于语音识别任务的辅助作用，且提升效果在低资源条件下更为明显。</p>
+
+
+
+<p><strong>三、基于预训练模型的其他系统框架</strong></p>
+
+
+
+<p>表征学习是机器学习中一种流行方法，不同表征往往可以揭示在数据背后隐藏的不同层面可解释因素。我们采用自监督预训练模型作为模型主干或用于提取表征，重点讨论低资源&nbsp;ASR&nbsp;任务中不同&nbsp;Transformer&nbsp;块的输出表征，系统框架包括&nbsp;CTC/Attention&nbsp;端到端系统和传统&nbsp;NN/HMM&nbsp;混合系统，如下图所示。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/fAzeUnzMzmm2.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p><strong>3.1&nbsp;</strong><strong>端到端系统</strong><strong></strong></p>
+
+
+
+<p>近期基于Transformer和Conformer的端到端ASR系统凭借其优异性能备受关注。但由于数据驱动的特性对低资源条件下的应用有所受限。借助预训练模型则可以应对标注数据资源不足带来的挑战，从而发挥端到端系统的性能优势。</p>
+
+
+
+<p>将预训练模型应用于端到端系统有两种方法：第一种是把预训练模型作为编码器部分，在此基础上添加基于Transformer的解码器来构建完整的encoder-decoder系统；第二种则是将预训练模型作为前端模块来提取表征，将提取到的表征输入到端到端系统进行模型训练。上述两种方法分别记为为EN和FE。通过实验发现前者性能表现欠佳，因此主要采用后者进行后续探索。</p>
+
+
+
+<p><strong>3.2 DNN/HMM</strong><strong>混合系统</strong><strong></strong></p>
+
+
+
+<p>在传统混合系统中，我们依旧将预训练模型作为特征提取器。将音频数据输入到预训练模型中，从指定的&nbsp;Transformer&nbsp;层中提取表征，作为声学模型的特征进行使用。</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="http://web.ee.tsinghua.edu.cn/_tsf/00/0A/u2y2YrV7fEF3.png" alt="remote.png" title="remote.png"></figure>
+
+
+
+<p>实验使用波斯语数据集，为方便对比我们将不同系统使用不同预训练模型各层表征的语音识别性能情况展示在上图中。可以看到，<strong>从预训练模型的第</strong><strong>18</strong><strong>层到第</strong><strong>21</strong><strong>层</strong><strong>Transformer</strong><strong>提取表征对于</strong><strong>ASR</strong><strong>任务相对更</strong><strong>有利。</strong>微调后预训练模型XLSR-53-FT取得了最低的词错误率，同时<strong>对比微调后的模型</strong><strong>XLSR-53-FT</strong><strong>和原预训练模型</strong><strong>XLSR-53</strong><strong>，主要差异集中在最后</strong><strong>3</strong><strong>层，后者的最后</strong><strong>3</strong><strong>层表征在端到端和传统混合系统中均表现出明显的性能下降。</strong>从图中折线变化来看，WavLM和微调后的wav2vec2.0模型XLSR-53-FT趋势一致，而HuBERT则和XLSR-53更加接近。此外，<strong>相比于传统混合系统，端到端系统对来自不同预训练模型或同一预训练模型中不同层的表征更为敏感。</strong><strong></strong></p>
+
+
+
+<p><strong>四、总结</strong></p>
+
+
+
+<p>本文将wav2vec2.0，HuBERT和WavLM自监督预训练模型应用于低资源语种语音识别系统中，在10小时标注数据集的条件下对15个低资源小语种的识别性能进行提升。研究包括预训练模型使用的数据和体系架构、微调方法、预训练表征提取与分析、以及在端到端和混合系统中的进一步应用。</p>
+
+
+
+<p>我们发现，<strong>目标语种的音频数据对于预训练模型的迁移应用具有明显帮助作用，借助自监督训练进行模型微调可以使得预训练模型更好地适应目标语种。多语言预训练模型在跨语种语音识别中具有优势，但多语种微调相比于单语种微调并未取得性能提升。我们通过实验验证了音素识别任务可以提高低资源语音识别的性能。</strong></p>
+
+
+
+<p>同时我们也<strong>深入分析了预训练模型各个</strong><strong>Transformer</strong><strong>层输出表征之间的关系，了解不同语种、不同预训练模型、不同微调方法带来的变化。并进一步在端到端和传统混合系统中对预训练表征进行了对比和应用。</strong></p>
+
+	</div>
+</div>
+
+
+<div class="site-footer">
+			<footer class="site-info" aria-label="站点" itemtype="https://schema.org/WPFooter" itemscope>
+			<div class="inside-site-info grid-container">
+								<div class="copyright-bar">
+					    © <script>document.write(new Date().getFullYear());</script> 你的网站域名或标题 • <a href="http://beian.miit.gov.cn/" target="_blank">你的ICP备案号</a>
+    				</div>
+			</div>
+		</footer>
+		</div>
+
+<a title="回到顶部" aria-label="回到顶部" rel="nofollow" href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+					<span class="gp-icon icon-arrow-up"><svg viewbox="0 0 330 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero"></path></svg></span>
+				</a><script id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script><style id="core-block-supports-inline-css">.wp-container-core-buttons-layout-2.wp-container-core-buttons-layout-2{justify-content:center;}</style>
+<script id="stickThis-js-extra">var sticky_anything_engage = {"element":".main-navigation","topspace":"0","minscreenwidth":"0","maxscreenwidth":"999999","zindex":"1","legacymode":"","dynamicmode":"","debugmode":"","pushup":"","adminbar":"1"};</script>
+<script src="/wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/stickThis.js?ver=2.1.1" id="stickThis-js"></script>
+<!--[if lte IE 11]>
+<script src="http://new2:8083/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.3.0" id="generate-classlist-js"></script>
+<![endif]-->
+<script id="generate-menu-js-extra">var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"打开子菜单","closeSubMenuLabel":"关闭子菜单"};</script>
+<script src="/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.3.0" id="generate-menu-js"></script>
+<script id="generate-back-to-top-js-extra">var generatepressBackToTop = {"smooth":"1"};</script>
+<script src="/wp-content/themes/generatepress/assets/js/back-to-top.min.js?ver=3.3.0" id="generate-back-to-top-js"></script>
+
+</body>
+</html>

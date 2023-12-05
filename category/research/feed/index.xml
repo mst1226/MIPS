@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>research &#8211; MIPS</title>
+	<atom:link href="http://new2/category/research/feed/?simply_static_page=2075" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Multimodal Intelligent Perceiving System</description>
+	<lastBuildDate>Wed, 17 May 2023 07:09:23 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.1</generator>
+
+<image>
+	<url>/wp-content/uploads/2023/05/微信图片_20230419161532-150x150.png</url>
+	<title>research &#8211; MIPS</title>
+	<link>/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>学术报告：咸鱼也要有梦——从计算机视觉到AI4Science的探索</title>
+		<link>/2023/05/16/%e5%ad%a6%e6%9c%af%e6%8a%a5%e5%91%8a%ef%bc%9a%e5%92%b8%e9%b1%bc%e4%b9%9f%e8%a6%81%e6%9c%89%e6%a2%a6-%e4%bb%8e%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89%e5%88%b0ai4science%e7%9a%84/</link>
+		
+		<dc:creator><![CDATA[root1]]></dc:creator>
+		<pubDate>Tue, 16 May 2023 05:54:22 +0000</pubDate>
+				<category><![CDATA[research]]></category>
+		<guid isPermaLink="false">/?p=120</guid>
+
+					<description><![CDATA[报告人：欧阳万里，浦江实验室领军科学家 时间：2022/12/11 [周日]&#160; 上午 11:00-1 ... <a title="学术报告：咸鱼也要有梦——从计算机视觉到AI4Science的探索" class="read-more" href="/2023/05/16/%e5%ad%a6%e6%9c%af%e6%8a%a5%e5%91%8a%ef%bc%9a%e5%92%b8%e9%b1%bc%e4%b9%9f%e8%a6%81%e6%9c%89%e6%a2%a6-%e4%bb%8e%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%a7%86%e8%a7%89%e5%88%b0ai4science%e7%9a%84/" aria-label="继续阅读学术报告：咸鱼也要有梦——从计算机视觉到AI4Science的探索">阅读更多</a>]]></description>
+										<content:encoded><![CDATA[<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2023/05/image-972x1024.png" alt="" class="wp-image-121" width="243" height="256" srcset="/wp-content/uploads/2023/05/image-972x1024.png 972w, /wp-content/uploads/2023/05/image-285x300.png 285w, /wp-content/uploads/2023/05/image-768x809.png 768w, /wp-content/uploads/2023/05/image-1458x1536.png 1458w, /wp-content/uploads/2023/05/image.png 1519w" sizes="(max-width: 243px) 100vw, 243px" /></figure></div>
+
+
+<p>报告人：欧阳万里，浦江实验室领军科学家</p>
+
+
+
+<p>时间：2022/12/11 [周日]&nbsp; 上午 11:00-12:00</p>
+
+
+
+<p>地点：腾讯会议 703-938-233</p>
+
+
+
+<p>题目：咸鱼也要有梦——从计算机视觉到AI4Science的探索</p>
+
+
+
+<p>摘要：本次报告将结合报告人的学术经历介绍尽管不可能每个人都是英雄，但仍可怀抱梦想，做出让自己快乐的科研工作。具体而言，将从报告人在计算机视觉领域的科研成果及其转型做AI4Science的动机出发，详细介绍当前其在实验室进行的A14Science领域的工作计划。同时，也将介绍目前最前沿的Science研究，包括今年的诺贝尔物理学奖和化学奖，简述量子信息技术，点击化学和生物正交化学概念及其应用，以及人工智能将在加速科学问题研究中扮演何等重要的角色。</p>
+
+
+
+<p>报告人简介：欧阳万里在香港中文大学获得博士学位，是深度学习与计算机视觉领域的专家，浦江实验室领军科学家，曾任悉尼大学电子信息工程学院研究主任。他主要从事计算机视觉和AI for Sience的研究。他的学术成果卓越，截至目前，谷歌学术引用达30000+，H-index指数达70+。据AIMiner报导，在计算机视觉领域影响力为全球第50、澳大利亚第2。获得悉尼大学杰出科研校长奖（Vice Chancellor&#8217;s award for &#8220;Outstanding Research&#8221;，同年悉尼大学工程学院仅2人获此奖）。据国际权威机构爱斯维尔对计算机视觉与模式识别领域2016-2021发表论文的统计，平均每篇文章引用次数(Citations per paper) 和领域加权影响力（field-weighted citation impact, FWC）皆为澳大利亚第1。两篇文章入选paperdigest CVPR/CCV最有影响力的文章。担任ICCV最佳审稿人，IJCV和Pattern Recognition编委，TPAM客座编辑，CVPR2023资深领域主席，ICCV2019展示主席，CVPR2021、ICCV2021领域主席。</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
